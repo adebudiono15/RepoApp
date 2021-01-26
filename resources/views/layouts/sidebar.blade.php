@@ -65,14 +65,22 @@
                 </a>
             </li>
 
-            <li class="nav-item {{ Request::is('setting') ? 'active' : '' }}">
-                <a href="#">
+            <li class="nav-item {{ Request::is('edit-password') ? 'active' : '' }}">
+                <a href="{{ route('edit-password') }}">
                     <i class="flaticon-user-5"></i>
                     <p>Akun</p>
                 </a>
             </li>
-
-          
+            <li class="nav-item {{ Request::is('setting') ? 'active' : '' }}">
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                    <i class="flaticon-next"></i>
+                    <p>Logout</p>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </li>
         </ul>
     </div>
 </div>

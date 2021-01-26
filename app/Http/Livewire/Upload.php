@@ -34,8 +34,8 @@ class Upload extends Component
         );
 
         // dd($selectoption);
-        $repo = ModelsUpload::where('title', 'like', '%'.$this->search.'%')->orderBy('created_at', 'DESC')->paginate(4);
-       
+        $userId = Auth::user()->name;
+        $repo = ModelsUpload::where('user',$userId)->where('title', 'like', '%'.$this->search.'%')->orderBy('created_at', 'DESC')->paginate(4);
         return view('livewire.upload',[
             'repo' => $repo,
             'selectoption' => $selectoption
@@ -82,7 +82,7 @@ class Upload extends Component
 
     public function download($id){
 
-     if(Auth::user()){
+     if(Auth::id()){
            $file = ModelsUpload::find($id);
             $upload = $file->file;
             $download = $file->download;
