@@ -15,22 +15,32 @@
               </div>
             </p>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="my-input">Nama</label>
                         <input type="text" wire:model="name" class="form-control form-control-sm shadow">
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="my-input">E-Mail</label>
                         <input type="email" wire:model="email" class="form-control form-control-sm shadow">
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="my-input">Password</label>
                         <input type="password" wire:model="password" class="form-control form-control-sm shadow">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="my-input">Role</label>
+                        <select  wire:model.defer="role" class="form-control form-control-sm">
+                            <option selected>Pilih Role User</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                        </select>
                     </div>
                 </div>
             </div>

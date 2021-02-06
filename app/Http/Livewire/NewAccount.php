@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class NewAccount extends Component
 {
-    public $name,$email,$password;
+    public $name,$email,$password,$role;
     public function render()
     {
         return view('livewire.new-account')->extends('layouts.master-app-dashboard');
@@ -20,7 +20,8 @@ class NewAccount extends Component
         $data = User::create([
             'name' => $this->name,
             'email' => $this->email,
-            'password' => Hash::make($this->password)
+            'password' => Hash::make($this->password),
+            'role' => $this->role
         ]);
 
         $this->dispatchBrowserEvent('swal', [
@@ -38,5 +39,6 @@ class NewAccount extends Component
         $this->name = null;
         $this->email = null;
         $this->password = null;
+        $this->role = null;
     }
 }

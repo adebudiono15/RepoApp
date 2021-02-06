@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 26 Jan 2021 pada 09.07
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.4.10
+-- Waktu pembuatan: 06 Feb 2021 pada 19.23
+-- Versi server: 10.4.13-MariaDB
+-- Versi PHP: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -97,7 +97,9 @@ INSERT INTO `upload` (`id`, `uuid`, `user`, `kategori`, `title`, `content`, `fil
 (35, 'cfabd500-5757-11eb-915d-0908c4b361e5', 'budi', 'Modul Matakuliah', 'qwqw', 'qwqw', '/tmp/phpVVU25n0.25690500 1610732022.pdf', 26, '2021-01-15 10:33:42', '2021-01-16 01:39:02'),
 (37, 'bd843ca0-5760-11eb-acb3-8f8297749602', 'budi', 'Skripsi', 'aaa', 'aaa', '/tmp/phpoptJ4n0.28509800 1610735857.zip', 13, '2021-01-15 11:37:37', '2021-01-16 00:19:01'),
 (38, '2e4036c0-57cb-11eb-b31a-b519731ffa7b', 'budi', 'Modul Matakuliah', 'wwww', 'wwwww', '/tmp/phpBmoogs0.08380000 1610781573.zip', 8, '2021-01-16 00:19:33', '2021-01-25 22:45:51'),
-(39, '34da06d0-5f9b-11eb-b608-21fc60af2446', 'ade', 'Modul Matakuliah', 'a', 'a', '/tmp/phpmiMAk70.61984800 1611640577.json', 1, '2021-01-25 22:56:17', '2021-01-25 22:56:29');
+(39, '34da06d0-5f9b-11eb-b608-21fc60af2446', 'ade', 'Modul Matakuliah', 'a', 'a', '/tmp/phpmiMAk70.61984800 1611640577.json', 1, '2021-01-25 22:56:17', '2021-01-25 22:56:29'),
+(40, '77565bf0-66ab-11eb-a223-41ab1485adb7', 'budi', 'Modul Matakuliah', 'a', 'a', '/tmp/phpvpxLHX0.24826200 1612417219.txt', 1, '2021-02-03 22:40:19', '2021-02-03 22:41:00'),
+(41, 'aa11edd0-66ab-11eb-a1e5-1193179f079e', 'budi', 'Skripsi', 'sddsd', 'sdsd', '/tmp/phppEfrHE0.36267000 1612417304.txt', 0, '2021-02-03 22:41:44', '2021-02-03 22:41:44');
 
 -- --------------------------------------------------------
 
@@ -122,8 +124,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`) VALUES
-(1, 'budi', 'budi@gmail.com', NULL, '$2y$10$Lzr56/HAhXU.A8W98vW8QuEY7cjOTli8O9p1g.ZpNbjgOkZmETI0S', 'suIfPftYRvkFe8QpzRkWD3ERqOLo2u2CuLdOQUmqIYOn2YX0F1QaIbHzXiF1', '2020-12-24 16:20:21', '2021-01-25 23:43:56', NULL),
-(2, 'baru', 'baru@gmail.com', NULL, '$2y$10$uaVAo/i6p6VedwNoLKyIL.Uf6h6O9ik2u22puSOgrjnzKtZFgGSvO', NULL, '2021-01-26 01:04:43', '2021-01-26 01:04:43', NULL);
+(1, 'budi', 'budi@gmail.com', NULL, '$2y$10$Lzr56/HAhXU.A8W98vW8QuEY7cjOTli8O9p1g.ZpNbjgOkZmETI0S', 'suIfPftYRvkFe8QpzRkWD3ERqOLo2u2CuLdOQUmqIYOn2YX0F1QaIbHzXiF1', '2020-12-24 16:20:21', '2021-01-25 23:43:56', 'admin'),
+(2, 'baru', 'baru@gmail.com', NULL, '$2y$10$uaVAo/i6p6VedwNoLKyIL.Uf6h6O9ik2u22puSOgrjnzKtZFgGSvO', NULL, '2021-01-26 01:04:43', '2021-01-26 01:04:43', 'admin'),
+(4, 'ade', 'adebudiono7@gmail.com', NULL, '$2y$10$hSvQGT7L1jvHxHeunm.7buU0SyfwTGAWdvRcgYtpNPDkP6kSAanti', NULL, '2021-02-06 05:22:28', '2021-02-06 05:22:28', NULL);
 
 --
 -- Indexes for dumped tables
@@ -180,13 +183,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `upload`
 --
 ALTER TABLE `upload`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

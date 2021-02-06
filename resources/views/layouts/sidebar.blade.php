@@ -71,12 +71,14 @@
                     <p>Akun</p>
                 </a>
             </li>
+            @if (auth()->user()->role == 'admin')
             <li class="nav-item {{ Request::is('akun-baru') ? 'active' : '' }}">
                 <a href="{{ route('akun-baru') }}">
                     <i class="flaticon-add-user"></i>
                     <p>Buat Akun</p>
                 </a>
             </li>
+            @endif
             <li class="nav-item {{ Request::is('setting') ? 'active' : '' }}">
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
