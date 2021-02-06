@@ -9,19 +9,29 @@ use Livewire\Component;
 
 class NewAccount extends Component
 {
-    public $name,$email,$password,$role;
+    public $name,$email,$password,$userrole;
+    
     public function render()
     {
-        return view('livewire.new-account')->extends('layouts.master-app-dashboard');
+
+        $roles = array(
+            ["role" => "admin"],
+            ["role" => "user"]
+        );
+        return view('livewire.new-account',[
+            'roles' => $roles
+        ])->extends('layouts.master-app-dashboard');
     }
 
     public function Submit(){
 
-        $data = User::create([
+
+
+        $data = User::insert([
             'name' => $this->name,
             'email' => $this->email,
-            'password' => Hash::make($this->password),
-            'role' => $this->role
+            'role' => $this->userrole,
+            'password' => Hash::make($this->password)
         ]);
 
         $this->dispatchBrowserEvent('swal', [
@@ -32,7 +42,7 @@ class NewAccount extends Component
             'showConfirmButton' => false,
             'position' => 'center'
         ]);
-        $this->ResetInput();
+        // $this->ResetInput();
     }
 
     public function ResetInput(){

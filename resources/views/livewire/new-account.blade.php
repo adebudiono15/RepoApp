@@ -11,8 +11,8 @@
         </div>
         <div class="page-inner py-5">
             <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-             
-              </div>
+
+            </div>
             </p>
             <div class="row">
                 <div class="col-md-3">
@@ -35,11 +35,12 @@
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label for="my-input">Role</label>
-                        <select  wire:model.defer="role" class="form-control form-control-sm">
-                            <option selected>Pilih Role User</option>
-                                <option value="admin">Admin</option>
-                                <option value="user">User</option>
+                        <label for="role">Role</label>
+                        <select wire:model.defer="userrole" id="my-select" class="form-control form-control-sm">
+                            <option>Pilih Role User</option>
+                            @foreach ($roles as $item)
+                                <option value="{{ $item['role'] }}">{{ $item['role'] }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -51,6 +52,6 @@
                     </div>
                 </div>
             </div>
-            </div>
         </div>
+    </div>
     </div>
